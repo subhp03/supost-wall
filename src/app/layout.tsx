@@ -1,12 +1,8 @@
 import type { Metadata } from "next";
-import { Itim } from "next/font/google";
+import { Inter } from "next/font/google";
 import "./globals.css";
 
-const itim = Itim({
-  variable: "--font-sans",
-  subsets: ["latin"],
-  weight: "400",
-});
+const inter = Inter({ variable: "--font-sans", subsets: ["latin"] });
 
 export const metadata: Metadata = {
   title: "Wall",
@@ -15,8 +11,8 @@ export const metadata: Metadata = {
 
 export default function RootLayout({ children }: LayoutProps<"/">) {
   return (
-    <html lang="en" className={`${itim.variable} h-full antialiased`}>
-      <body className="min-h-full bg-[#fcf9f6] font-sans text-[#1a1a1a]">
+    <html lang="en" className={`${inter.variable} h-full antialiased`}>
+      <body className="min-h-full bg-slate-50 font-sans text-slate-900">
         {children}
       </body>
     </html>
