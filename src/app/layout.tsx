@@ -6,7 +6,7 @@ const inter = Inter({ variable: "--font-sans", subsets: ["latin"] });
 
 export const metadata: Metadata = {
   title: "Wall",
-  description: "Greg Wientjes's wall",
+  description: "Random Person's wall",
 };
 
 export default function RootLayout({ children }: LayoutProps<"/">) {
