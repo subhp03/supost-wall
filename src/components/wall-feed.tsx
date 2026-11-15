@@ -10,20 +10,13 @@ type Post = { id: number; author: string; text: string; time: string };
 
 const MAX_LENGTH = 280;
 
-const initialPosts: Post[] = [
-  { id: 1, author: "Anna", time: "2h", text: "Hey Greg, did you debug your coffee maker yet? Last cup tasted like JavaScript errors." },
-  { id: 2, author: "Adelaida", time: "3h", text: "Greg, saw your last coding session—pretty sure you broke Stack Overflow again! 🚨" },
-  { id: 3, author: "Juho", time: "4h", text: "Greg, are you still coding in pajamas, or have you upgraded to full-time sweatpants mode?" },
-  { id: 4, author: "Maija", time: "5h", text: "Greg, rumor has it your computer has more stickers than code running on it. Confirm?" },
-  { id: 5, author: "Alex", time: "6h", text: "Yo Greg, just pulled an all-nighter on the assignment. Turns out sleep deprivation doesn't improve coding skills. Weird!" },
-  { id: 6, author: "Sheryl", time: "8h", text: "Greg, when are we gonna deploy your latest dance moves to production? #AgileDancer" },
-];
+const initialPosts: Post[] = [];
 
 export function WallFeed() {
   const [posts, setPosts] = useState(initialPosts);
   const [draft, setDraft] = useState("");
 
-  function share(e: React.FormEvent) {
+  function share(e: React.SubmitEvent<HTMLFormElement>) {
     e.preventDefault();
     const text = draft.trim();
     if (!text) return;
