@@ -1,7 +1,7 @@
 -- One table holds every wall entry.
 create table if not exists public.posts (
   id         uuid primary key default gen_random_uuid(),
-  author     text not null default 'Greg Wientjes',
+  author     text not null default 'Random Person',
   message    text not null check (char_length(message) between 1 and 280),
   created_at timestamptz not null default now()
 );
